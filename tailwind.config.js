@@ -5,6 +5,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
+        xs: '320px',
         '2xl': '1440px', // 2xl을 1440px로 재정의
       },
     },

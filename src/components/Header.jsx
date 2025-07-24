@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { IMAGES } from "../constants/images";
+import { useLocation } from "react-router-dom";
 
 export default function Header() {
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isQuickMenuVisible, setIsQuickMenuVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,37 +36,93 @@ export default function Header() {
     setIsMenuOpen(false);
   };
 
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  // 퀵메뉴가 다시 활성화될 때 패널을 닫음(초기화)
+  useEffect(() => {
+    if (isQuickMenuVisible) {
+      setIsMenuOpen(false);
+    }
+  }, [isQuickMenuVisible]);
+
   return (
     <>
       {/* 기존 헤더 */}
-      <header className="flex w-full h-[162.699px] pt-[38px] pr-[62px] pb-[38px] pl-[62px] justify-between items-center flex-nowrap absolute top-0 left-0 z-[65]">
+      <header className={`flex w-full h-[105.7px] pt-[38px] pb-[38px] px-[10px] sm:px-[62px] justify-between items-center flex-nowrap absolute top-0 left-0 z-[65] ${location.pathname.startsWith('/about') ? 'bg-white' : ''}`}>
         {/* 로고 섹션 */}
         <div className="flex items-center shrink-0 flex-nowrap relative z-[66]">
           <img 
             src={IMAGES.LOGO.FRIENDER_MAIN} 
             alt="프렌더 로고" 
-            className="h-24 w-auto"
+            className="h-24 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => window.location.href = '/'}
           />
         </div>
         
-        {/* 네비게이션 메뉴 - 모든 해상도에서 표시 */}
-        <nav className="flex w-[693px] gap-[54px] items-center shrink-0 flex-nowrap relative z-[71] justify-end">
-          <a href="#company" className="h-[29px] shrink-0 basis-auto font-['Inter'] text-[24px] font-black leading-[29px] text-[#1f3a31] relative text-left whitespace-nowrap z-[73] hover:text-white transition-colors">
+        {/* 네비게이션 메뉴 - md 이상에서만 표시 */}
+        <nav className="hidden lg:flex w-[693px] gap-[54px] items-center shrink-0 flex-nowrap relative z-[71] justify-end">
+          <a href="/about" className={`h-[29px] shrink-0 basis-auto font-['Inter'] text-[24px] font-black leading-[29px] text-[#1f3a31] relative text-left whitespace-nowrap z-[73] transition-colors ${location.pathname === '/' ? 'hover:text-white' : 'hover:text-[#517728]'}`}>
             회사소개
           </a>
-          <a href="#content" className="h-[29px] shrink-0 basis-auto font-['Inter'] text-[24px] font-black leading-[29px] text-[#1f3a31] relative text-left whitespace-nowrap z-[73] hover:text-white transition-colors">
+          <a href="#content" className={`h-[29px] shrink-0 basis-auto font-['Inter'] text-[24px] font-black leading-[29px] text-[#1f3a31] relative text-left whitespace-nowrap z-[73] transition-colors ${location.pathname === '/' ? 'hover:text-white' : 'hover:text-[#517728]'}`}>
             콘텐츠
           </a>
-          <a href="#training" className="hidden xl:block h-[29px] shrink-0 basis-auto font-['Inter'] text-[24px] font-black leading-[29px] text-[#1f3a31] relative text-left whitespace-nowrap z-[74] hover:text-white transition-colors">
+          <a href="#training" className={`hidden xl:block h-[29px] shrink-0 basis-auto font-['Inter'] text-[24px] font-black leading-[29px] text-[#1f3a31] relative text-left whitespace-nowrap z-[74] transition-colors ${location.pathname === '/' ? 'hover:text-white' : 'hover:text-[#517728]'}`}>
             전문가 양성
           </a>
-          <a href="#gallery" className="hidden xl:block h-[29px] shrink-0 basis-auto font-['Inter'] text-[24px] font-black leading-[29px] text-[#1f3a31] relative text-left whitespace-nowrap z-[75] hover:text-white transition-colors">
+          <a href="#gallery" className={`hidden xl:block h-[29px] shrink-0 basis-auto font-['Inter'] text-[24px] font-black leading-[29px] text-[#1f3a31] relative text-left whitespace-nowrap z-[75] transition-colors ${location.pathname === '/' ? 'hover:text-white' : 'hover:text-[#517728]'}`}>
             활동 갤러리
           </a>
-          <a href="#contact" className="h-[29px] shrink-0 basis-auto font-['Inter'] text-[24px] font-black leading-[29px] text-[#1f3a31] relative text-left whitespace-nowrap z-[76] hover:text-white transition-colors">
+          <a href="/contact" className={`h-[29px] shrink-0 basis-auto font-['Inter'] text-[24px] font-black leading-[29px] text-[#1f3a31] relative text-left whitespace-nowrap z-[76] transition-colors ${location.pathname === '/' ? 'hover:text-white' : 'hover:text-[#517728]'}`}>
             문의하기
           </a>
         </nav>
+        {/* 햄버거 메뉴 버튼 - md 이하에서만 표시 */}
+        <button
+          className="block lg:hidden z-[80] w-12 h-12 rounded-full bg-[#517728] flex items-center justify-center shadow-lg"
+          onClick={() => setIsMobileMenuOpen(true)}
+          aria-label="모바일 메뉴 열기"
+        >
+          <div className="flex flex-col items-center justify-center w-7 h-7">
+            <span className="block w-7 h-1 bg-white rounded mb-1"></span>
+            <span className="block w-7 h-1 bg-white rounded mb-1"></span>
+            <span className="block w-7 h-1 bg-white rounded"></span>
+          </div>
+        </button>
+        {/* 모바일 드롭다운 메뉴 */}
+        {isMobileMenuOpen && (
+          <>
+            {/* 오버레이 */}
+            <div className="fixed inset-0 bg-black bg-opacity-40 z-[99]" onClick={closeMobileMenu}></div>
+            {/* 메뉴 패널 */}
+            <div className="fixed top-0 left-0 w-full bg-white z-[100] shadow-lg animate-fadeInDown">
+              <div className="flex justify-between items-center px-6 py-4 border-b border-gray-200">
+                <img 
+                  src={IMAGES.LOGO.FRIENDER_MAIN} 
+                  alt="프렌더 로고" 
+                  className="h-10 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => {
+                    window.location.href = '/';
+                    closeMobileMenu();
+                  }}
+                />
+                <button onClick={closeMobileMenu} className="w-8 h-8 flex items-center justify-center" aria-label="모바일 메뉴 닫기">
+                  <span className="block w-6 h-1 bg-[#1f3a31] rotate-45 absolute"></span>
+                  <span className="block w-6 h-1 bg-[#1f3a31] -rotate-45 absolute"></span>
+                </button>
+              </div>
+              <nav className="flex flex-col gap-2 px-6 py-4">
+                <a href="/about" onClick={closeMobileMenu} className="py-3 text-lg font-bold text-[#1f3a31] border-b border-gray-100">회사소개</a>
+                <a href="#content" onClick={closeMobileMenu} className="py-3 text-lg font-bold text-[#1f3a31] border-b border-gray-100">콘텐츠</a>
+                <a href="#training" onClick={closeMobileMenu} className="py-3 text-lg font-bold text-[#1f3a31] border-b border-gray-100">전문가 양성</a>
+                <a href="#gallery" onClick={closeMobileMenu} className="py-3 text-lg font-bold text-[#1f3a31] border-b border-gray-100">활동 갤러리</a>
+                <a href="/contact" onClick={closeMobileMenu} className="py-3 text-lg font-bold text-[#1f3a31]">문의하기</a>
+              </nav>
+            </div>
+          </>
+        )}
       </header>
 
       {/* 리모컨 형식 퀵메뉴 */}
@@ -101,15 +160,18 @@ export default function Header() {
                 className="w-6 h-6 flex items-center justify-center"
                 aria-label="메뉴 닫기"
               >
-                <span className="block w-4 h-0.5 bg-[#1f3a31] rotate-45"></span>
-                <span className="block w-4 h-0.5 bg-[#1f3a31] -rotate-45 -mt-0.5"></span>
+                {/* SVG X 아이콘 */}
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="4" y1="4" x2="16" y2="16" stroke="#1f3a31" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="16" y1="4" x2="4" y2="16" stroke="#1f3a31" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
               </button>
             </div>
 
             {/* 메뉴 아이템들 */}
             <div className="p-2">
               <a 
-                href="#company" 
+                href="/about" 
                 onClick={closeMenu}
                 className="block px-3 py-2 text-sm font-bold text-[#1f3a31] hover:bg-gray-100 rounded transition-colors"
                 style={{ fontFamily: 'KakaoSmallSans' }}
@@ -141,7 +203,7 @@ export default function Header() {
                 활동 갤러리
               </a>
               <a 
-                href="#contact" 
+                href="/contact" 
                 onClick={closeMenu}
                 className="block px-3 py-2 text-sm font-bold text-[#1f3a31] hover:bg-gray-100 rounded transition-colors"
                 style={{ fontFamily: 'Inter' }}

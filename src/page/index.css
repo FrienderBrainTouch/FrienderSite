@@ -23,6 +23,27 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('../FrienderResources/fonts/GmarketSansLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('../FrienderResources/fonts/GmarketSansMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('../FrienderResources/fonts/GmarketSansBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 :root {
   --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",

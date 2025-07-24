@@ -37,14 +37,14 @@ const IntroSection = () => {
 
   return (
     <section className="w-full h-screen flex items-center bg-white">
-      <div className="max-w-[90%] mx-auto w-full h-full pb-[7rem]">
+      <div className="max-w-[90%] mx-auto w-full h-full pb-16 sm:pb-[7rem]">
         <div className="grid grid-cols-1 xl:grid-cols-[3fr_2fr] gap-8 xl:gap-16 2xl:gap-24 3xl:gap-32 items-center h-full">
           {/* 왼쪽 컨텐츠 */}
           <div className="flex flex-col h-full justify-between xl:justify-between">
             <div className="h-3/5 flex flex-col justify-end xl:justify-end items-center xl:items-start">
               <h2
                 className="
-                  font-bold text-2xl sm:text-3xl md:text-4xl
+                  font-bold text-lg sm:text-3xl md:text-4xl
                   2xl:text-[2.75rem] 2xl:leading-[1.5]
                   text-black mb-6 text-center xl:text-left
                 "
@@ -52,7 +52,7 @@ const IntroSection = () => {
               >
                 프렌더는 <span className="text-[#517728]">기술과 교육의 융합</span>을 통해 <br />함께 성장합니다.
               </h2>
-              <div className="flex gap-9 mb-8 justify-center xl:justify-start">
+              <div className="flex flex-wrap sm:flex-nowrap gap-2 sm:gap-9 mb-8 justify-center xl:justify-start">
                 <span className="bg-white shadow-xl rounded-full px-4 py-2 md:px-6 md:py-2 flex items-center">
                   <span className="text-[#769940] font-normal text-lg md:text-xl xl:text-xl text-center xl:text-left" style={{ fontFamily: 'KakaoSmallSans' }}>
                     #예비 사회적 기업
@@ -70,7 +70,7 @@ const IntroSection = () => {
                 </span>
               </div>
               <p 
-                className="text-black font-medium text-lg md:text-xl xl:text-2xl mb-8 text-center xl:text-left"
+                className="text-black font-medium text-md sm:text-lg md:text-xl xl:text-2xl mb-8 text-center xl:text-left"
                 style={{ fontFamily: 'Inter', lineHeight: '3rem' }}
               >
                  첨단 기술과 창의의 교육 콘텐츠를 결합해 <br />학생, 교사, 지역사회를 연결하는 솔루션을 제공합니다.
@@ -78,9 +78,12 @@ const IntroSection = () => {
             </div>
             
             {/* 회사 가치 아이콘들 */}
-            <div className="grid grid-cols-5 gap-6 flex-1 flex items-center justify-center xl:justify-start max-w-4xl">
-              {values.map((value) => (
-                <div key={value.id} className="flex flex-col items-center justify-center xl:justify-start">
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 flex-1 items-center justify-center xl:justify-start max-w-4xl">
+              {values.map((value, idx) => (
+                <div
+                  key={value.id}
+                  className={`flex flex-col items-center justify-center xl:justify-start ${idx === values.length - 1 ? 'col-span-2 sm:col-span-1' : ''}`}
+                >
                   <div className="w-[7rem] h-[7rem] flex items-center justify-center xl:justify-start">
                     <img
                       src={value.icon}
@@ -89,7 +92,7 @@ const IntroSection = () => {
                     />
                   </div>
                   <p
-                    className="text-gray-800 font-medium text-xl mt-2 text-center"
+                    className="text-gray-800 font-medium text-lg md:text-xl mt-2 text-center"
                     style={{ fontFamily: 'Inter' }}
                   >
                     {value.name}

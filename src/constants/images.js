@@ -38,6 +38,21 @@ export const IMAGES = {
     SUSTAINABILITY: '/src/FrienderResources/Sustainability.png',
     CENTER_IMAGE: '/src/FrienderResources/intro_friender.png',
   },
+  
+  // 회사소개 섹션 이미지
+  ABOUT: {
+    MAIN: '/src/FrienderResources/About-us_main.png',
+    ONE: '/src/FrienderResources/About-us_1.png',
+    TWO: '/src/FrienderResources/About-us_2.png',
+    THREE: '/src/FrienderResources/About-us_3.png',
+    HOME: '/src/FrienderResources/home.png',
+    FILE_DOWNLOAD: '/src/FrienderResources/file_download.png',
+    SCROLL: '/src/FrienderResources/scroll.png',
+    CAR: '/src/FrienderResources/Car.png',
+    BUS: '/src/FrienderResources/Bus.png',
+    TRAIN: '/src/FrienderResources/Train.png',
+    ABOUT_LOGO: '/src/FrienderResources/about_Logo.png',
+  },
 };
 
 // 폰트 경로

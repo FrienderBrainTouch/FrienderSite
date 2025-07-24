@@ -12,11 +12,11 @@ const Footer = () => {
             className="h-24 w-auto mr-4"
           />
           <div className="text-sm space-y-2 flex flex-col justify-center">
-            <div className="flex items-center space-x-2">
+            <div className="flex flex-col md:flex-row items-start md:items-center space-y-1 md:space-y-0 md:space-x-2">
               <span>주식회사 프랜더</span>
-              <span>|</span>
+              <span className="hidden md:inline">|</span>
               <span>경기도 부천시 부천로 198번길 18, 202동 1508호</span>
-              <span>|</span>
+              <span className="hidden md:inline">|</span>
               <span>대표자 유재창</span>
             </div>
             <div className="flex items-center space-x-2">

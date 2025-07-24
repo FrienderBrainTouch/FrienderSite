@@ -32,7 +32,7 @@ const ServicesSection = () => {
     {
       id: 'gallery',
       title: '갤러리',
-      description: '교육 현장에서<br/> 실제 사용된 VR 수업 장면을 확인해보세요.',
+      description: '교육 현장에서 실제 사용된<br/> VR 수업 장면을 확인해보세요.',
       image: IMAGES.SERVICES.GALLERY_MAIN,
       buttonText: '활동 사진 보기',
       bgColor: '#152017'
@@ -86,7 +86,7 @@ const ServicesSection = () => {
 
 
         {/*2스 그리드 */}
-        <div className="grid grid-cols-2 grid-rows-2 h-full">
+        <div className="grid grid-cols-1 grid-rows-3 sm:grid-cols-2 sm:grid-rows-2 h-full">
           {/* 교육 콘텐츠 기획 */}
           <article
             className="relative h-full overflow-hidden group"
@@ -94,7 +94,7 @@ const ServicesSection = () => {
             onMouseEnter={() => setHoveredService(services[0].id)}
             onMouseLeave={() => setHoveredService(null)}
           >
-            <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-8 h-full">
+            <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-4 sm:p-8 h-full">
               <div className="flex flex-col h-full">
                 <div className="flex-3/4 flex items-center justify-center h-[75%]">
                   <img
@@ -105,7 +105,7 @@ const ServicesSection = () => {
                 </div>
                 {hoveredService !== services[0].id && (
                   <div className="flex-1/5 flex items-center justify-center h-[20%]">
-                    <h3 className="text-6xl font-bold text-center text-white"
+                    <h3 className="text-3xl md:text-4xl font-bold text-center text-white"
                       style={{
                         fontFamily: 'KakaoSmallSans'
                       }}
@@ -119,16 +119,18 @@ const ServicesSection = () => {
             
             {/* Hover 오버레이 */}
             {hoveredService === services[0].id && (
-              <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-center text-white p-8">
+              <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-center text-white p-4 sm:p-8">
                 <div className="flex flex-col h-full justify-between">
                   <div className="flex-1 flex items-center justify-center">
-                    <h3 className="text-6xl font-bold text-center">{services[0].title}</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center">
+                      {services[0].title}
+                    </h3>
                   </div>
                   <div className="flex-1 flex items-center justify-center">
-                    <p className="text-center text-2xl font-bold leading-relaxed" dangerouslySetInnerHTML={{ __html: services[0].description }}></p>
+                    <p className="text-center text-sm sm:text-md md:text-lg lg:text-xl xl:text-3xl font-bold leading-relaxed" dangerouslySetInnerHTML={{ __html: services[0].description }}></p>
                   </div>
                   <div className="flex-1 flex items-center justify-center">
-                    <button className="bg-white text-[#395E00] px-16 pt-8 pb-9 rounded-full font-bold text-4xl shadow-lg hover:bg-[#517728] hover:text-white transition-colors"
+                    <button className="bg-white text-[#395E00] px-4 sm:px-8 lg:px-16 pt-2 sm:pt-6 lg:pt-8 pb-2 sm:pb-7 lg:pb-9 rounded-full font-bold text-md sm:text-2xl lg:text-4xl shadow-lg hover:bg-[#517728] hover:text-white transition-colors"
                       style={{ fontFamily: 'KakaoSmallSans', fontWeight: '700' }}
                     >
                       {services[0].buttonText}
@@ -146,7 +148,7 @@ const ServicesSection = () => {
             onMouseEnter={() => setHoveredService(services[1].id)}
             onMouseLeave={() => setHoveredService(null)}
           >
-            <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-8 h-full">
+            <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-4 sm:p-8 h-full">
               <div className="flex flex-col h-full">
                 <div className="flex-3/4 flex items-center justify-center h-[75%]">
                   <img
@@ -157,7 +159,7 @@ const ServicesSection = () => {
                 </div>
                 {hoveredService !== services[1].id && (
                   <div className="flex-1/5 flex items-center justify-center h-[20%]">
-                    <h3 className="text-6xl font-bold text-center text-white"
+                    <h3 className="text-3xl md:text-4xl font-bold text-center text-white"
                       style={{
                         fontFamily: 'KakaoSmallSans'
                       }}
@@ -171,16 +173,18 @@ const ServicesSection = () => {
             
             {/* Hover 오버레이 */}
             {hoveredService === services[1].id && (
-              <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-center text-white p-8">
+              <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-center text-white p-4 sm:p-8">
                 <div className="flex flex-col h-full justify-between">
                   <div className="flex-1 flex items-center justify-center">
-                    <h3 className="text-6xl font-bold text-center">{services[1].title}</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center">
+                      {services[1].title}
+                    </h3>
                   </div>
                   <div className="flex-1 flex items-center justify-center">
-                    <p className="text-center text-2xl font-bold leading-relaxed" dangerouslySetInnerHTML={{ __html: services[1].description }}></p>
+                    <p className="text-center text-sm sm:text-md md:text-lg lg:text-xl xl:text-3xl font-bold leading-relaxed" dangerouslySetInnerHTML={{ __html: services[1].description }}></p>
                   </div>
                   <div className="flex-1 flex items-center justify-center">
-                    <button className="bg-white text-[#395E00] px-12 pt-8 pb-9 rounded-full font-bold text-4xl shadow-lg hover:bg-[#517728] hover:text-white transition-colors"
+                    <button className="bg-white text-[#395E00] px-4 sm:px-8 lg:px-16 pt-2 sm:pt-6 lg:pt-8 pb-2 sm:pb-7 lg:pb-9 rounded-full font-bold text-md sm:text-2xl lg:text-4xl shadow-lg hover:bg-[#517728] hover:text-white transition-colors"
                       style={{ fontFamily: 'KakaoSmallSans', fontWeight: '700' }}
                     >
                       {services[1].buttonText}
@@ -198,7 +202,7 @@ const ServicesSection = () => {
             onMouseEnter={() => setHoveredService(services[2].id)}
             onMouseLeave={() => setHoveredService(null)}
           >
-            <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-8 h-full">
+            <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-4 sm:p-8 h-full">
               <div className="flex flex-col h-full">
                 <div className="flex-3/4 flex items-center justify-center h-[75%]">
                   <img
@@ -209,7 +213,7 @@ const ServicesSection = () => {
                 </div>
                 {hoveredService !== services[2].id && (
                   <div className="flex-1/5 flex items-center justify-center h-[20%]">
-                    <h3 className="text-6xl font-bold text-center text-white"
+                    <h3 className="text-3xl md:text-4xl font-bold text-center text-white"
                       style={{
                         fontFamily: 'KakaoSmallSans'
                       }}
@@ -223,16 +227,18 @@ const ServicesSection = () => {
             
             {/* Hover 오버레이 */}
             {hoveredService === services[2].id && (
-              <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-center text-white p-8">
+              <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-center text-white p-4 sm:p-8">
                 <div className="flex flex-col h-full justify-between">
                   <div className="flex-1 flex items-center justify-center">
-                    <h3 className="text-6xl font-bold text-center">{services[2].title}</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center">
+                      {services[2].title}
+                    </h3>
                   </div>
                   <div className="flex-1 flex items-center justify-center">
-                    <p className="text-center text-2xl font-bold leading-relaxed" dangerouslySetInnerHTML={{ __html: services[2].description }}></p>
+                    <p className="text-center text-sm sm:text-md md:text-lg lg:text-xl xl:text-3xl font-bold leading-relaxed" dangerouslySetInnerHTML={{ __html: services[2].description }}></p>
                   </div>
                   <div className="flex-1 flex items-center justify-center">
-                    <button className="bg-white text-[#395E00] px-12 pt-8 pb-9 rounded-full font-bold text-4xl shadow-lg hover:bg-[#517728] hover:text-white transition-colors"
+                    <button className="bg-white text-[#395E00] px-4 sm:px-8 lg:px-16 pt-2 sm:pt-6 lg:pt-8 pb-2 sm:pb-7 lg:pb-9 rounded-full font-bold text-md sm:text-2xl lg:text-4xl shadow-lg hover:bg-[#517728] hover:text-white transition-colors"
                       style={{ fontFamily: 'KakaoSmallSans', fontWeight: '700' }}
                     >
                       {services[2].buttonText}
@@ -260,7 +266,14 @@ const ServicesSection = () => {
                 <button
                   onClick={prevSlide}
                   className="absolute z-10 w-11 transition-opacity"
-                  style={{ left: windowWidth <= 1024 ? 'calc(50% - 14rem)' : 'calc(50% - 16rem)' }}
+                  style={{
+                    left:
+                      windowWidth <= 1024
+                        ? windowWidth >= 768
+                          ? 'calc(50% - 10rem)'
+                          : 'calc(50% - 8rem)'
+                        : 'calc(50% - 16rem)'
+                  }}
                   aria-label="이전 슬라이드"
                 >
                   <img
@@ -303,7 +316,14 @@ const ServicesSection = () => {
                 <button
                   onClick={nextSlide}
                   className="absolute z-10 w-11 transition-opacity"
-                  style={{ right: windowWidth <= 1024 ? 'calc(50% - 14rem)' : 'calc(50% - 16rem)' }}
+                  style={{
+                    right:
+                      windowWidth <= 1024
+                        ? windowWidth >= 768
+                          ? 'calc(50% - 10rem)'
+                          : 'calc(50% - 8rem)'
+                        : 'calc(50% - 16rem)'
+                  }}
                   aria-label="다음 슬라이드"
                 >
                   <img
