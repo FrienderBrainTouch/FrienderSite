@@ -160,4 +160,76 @@ FrienderSite/
 
 ---
 
+## ⚙️ 프로젝트 설정 및 환경
+
+### 1. Vite 설정 (`vite.config.js`)
+- **base**: './' (상대 경로 기반 빌드)
+- **플러그인**: `@vitejs/plugin-react` 사용
+
+```js
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  base: './',
+  plugins: [react()],
+});
+```
+
+### 2. Tailwind CSS 설정 (`tailwind.config.js`)
+- **content**: `./src/**/*.{js,ts,jsx,tsx}`
+- **darkMode**: 'class' (다크모드 지원)
+- **theme**: xs(320px), 2xl(1440px) 등 커스텀 브레이크포인트
+- **플러그인**: `@tailwindcss/typography`
+
+```js
+module.exports = {
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      screens: {
+        xs: '320px',
+        '2xl': '1440px',
+      },
+    },
+  },
+  plugins: [require('@tailwindcss/typography')],
+};
+```
+
+### 3. PostCSS 설정 (`postcss.config.js`)
+- **플러그인**: tailwindcss, autoprefixer
+
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+```
+
+### 4. 주요 의존성 (`package.json`)
+
+#### dependencies
+- react, react-dom, react-router-dom
+- @emailjs/browser, emailjs-com (이메일 전송)
+
+#### devDependencies
+- @emotion/react, styled-components, styled-jsx (스타일링)
+- @tailwindcss/typography, tailwindcss, postcss, autoprefixer
+- typescript, vite, @vitejs/plugin-react
+
+#### scripts
+```json
+{
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
+}
+```
+
+---
+
 **프렌더(Friender)** - 창의력으로 미래를 디자인하는 창의 융합 교육 기업
