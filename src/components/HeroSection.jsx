@@ -24,7 +24,7 @@ const HeroSection = () => {
         ">
           창의력으로 미래를 디자인하는
           <br />
-          창의 융합 교육 기업, 프렌더
+          창의 융합 교육 기업, 프랜더
         </h1>
         <p className="text-md sm:text-lg md:text-xl mb-8 text-center xl:text-left">
           VR을 구현한 창의 교육 콘텐츠를 초등·중등 누구나 쉽게, 어디서나 자유롭게

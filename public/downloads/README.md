@@ -10,7 +10,7 @@
 - 이미지 파일 (.jpg, .png, .gif)
 
 ## 파일명 규칙
-- `friender_intro.pdf` - 프렌더 소개서
+- `friender_intro.pdf` - 프랜더 소개서
 - `friender_portfolio.pdf` - 포트폴리오
 - `friender_brochure.pdf` - 브로셔
 - `friender_case_study.pdf` - 케이스 스터디

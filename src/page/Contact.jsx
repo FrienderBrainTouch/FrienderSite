@@ -87,7 +87,7 @@ export default function Contact() {
       <div className="w-full max-w-5xl flex flex-col lg:flex-row items-center gap-12">
         {/* 왼쪽 문구 */}
         <div className="w-full lg:w-1/2 flex-shrink-0 mb-8 lg:mb-0 flex flex-col justify-center items-center h-full text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-2 text-[#222]">프렌더와 함께</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-2 text-[#222]">프랜더와 함께</h2>
           <h3 className="text-2xl lg:text-3xl font-bold mb-6 text-[#222]">콘텐츠를 설계해 보세요.</h3>
           <div className="text-lg lg:text-xl text-[#222] font-normal space-y-1">
             <div>진심을 담아야</div>
@@ -103,7 +103,7 @@ export default function Contact() {
                 onClick={() => handleDownload('Friender.pdf')}
                 className="w-full bg-[#517728] text-white font-semibold py-2 px-4 rounded hover:bg-[#40601e] transition-colors"
               >
-                📄 프렌더 소개서 다운로드
+                📄 프랜더 소개서 다운로드
               </button>
             </div>
           </div>

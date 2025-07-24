@@ -55,7 +55,7 @@ export default function Header() {
         <div className="flex items-center shrink-0 flex-nowrap relative z-[66]">
           <img 
             src={IMAGES.LOGO.FRIENDER_MAIN} 
-            alt="프렌더 로고" 
+            alt="프랜더 로고" 
             className="h-24 w-auto cursor-pointer hover:opacity-80 transition-opacity"
             onClick={() => window.location.href = '/'}
           />
@@ -101,7 +101,7 @@ export default function Header() {
               <div className="flex justify-between items-center px-6 py-4 border-b border-gray-200">
                 <img 
                   src={IMAGES.LOGO.FRIENDER_MAIN} 
-                  alt="프렌더 로고" 
+                  alt="프랜더 로고" 
                   className="h-10 w-auto cursor-pointer hover:opacity-80 transition-opacity"
                   onClick={() => {
                     window.location.href = '/';

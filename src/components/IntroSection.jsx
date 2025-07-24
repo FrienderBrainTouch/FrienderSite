@@ -50,7 +50,7 @@ const IntroSection = () => {
                 "
                 style={{ fontFamily: 'KakaoSmallSans' }}
               >
-                프렌더는 <span className="text-[#517728]">기술과 교육의 융합</span>을 통해 <br />함께 성장합니다.
+                프랜더는 <span className="text-[#517728]">기술과 교육의 융합</span>을 통해 <br />함께 성장합니다.
               </h2>
               <div className="flex flex-wrap sm:flex-nowrap gap-2 sm:gap-9 mb-8 justify-center xl:justify-start">
                 <span className="bg-white shadow-xl rounded-full px-4 py-2 md:px-6 md:py-2 flex items-center">
@@ -107,7 +107,7 @@ const IntroSection = () => {
             <div className="relative w-full">
               <img
                 src={IMAGES.COMPANY_VALUES.CENTER_IMAGE}
-                alt="프렌더 소개 이미지"
+                alt="프랜더 소개 이미지"
                 className="w-full h-full object-cover rounded-lg"
               />
             </div>
