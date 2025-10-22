@@ -2,60 +2,60 @@
 export const IMAGES = {
   // 로고 이미지
   LOGO: {
-    FRIENDER: '/src/FrienderResources/Logo.png',
-    FRIENDER_MAIN: '/src/FrienderResources/MainLogo.png',
-    FRIENDER_FOOTER: '/src/FrienderResources/FooterLogo.png',
+    FRIENDER: '/FrienderResources/Logo.png',
+    FRIENDER_MAIN: '/FrienderResources/MainLogo.png',
+    FRIENDER_FOOTER: '/FrienderResources/FooterLogo.png',
   },
   
   // 히어로 섹션
   HERO: {
-    BACKGROUND: '/src/FrienderResources/main_banner_pic.png',
+    BACKGROUND: '/FrienderResources/main_banner_pic.png',
   },
   
   // 서비스 섹션
   SERVICES: {
-    EDUCATION_CONTENT: '/src/FrienderResources/VR_Learning_Icons.png',
-    PLATFORM_CONSTRUCTION: '/src/FrienderResources/Tech_UI_Icon.png',
-    GALLERY_MAIN: '/src/FrienderResources/pic_icon.png',
-    CAMERA_GALLERY: '/src/FrienderResources/camera_gallery.png',
+    EDUCATION_CONTENT: '/FrienderResources/VR_Learning_Icons.png',
+    PLATFORM_CONSTRUCTION: '/FrienderResources/Tech_UI_Icon.png',
+    GALLERY_MAIN: '/FrienderResources/pic_icon.png',
+    CAMERA_GALLERY: '/FrienderResources/camera_gallery.png',
   },
   
   // 슬라이드 콘텐츠
   SLIDES: {
-    ENVIRONMENTAL_SCIENCE: '/src/FrienderResources/Environmental_Science.png',
-    DRONE: '/src/FrienderResources/Drone.png',
-    DRUG_PREVENTION: '/src/FrienderResources/Drug_Prevention.png',
-    WORLD_TRAVEL: '/src/FrienderResources/World_Travel.png',
-    BLOCK_CODING: '/src/FrienderResources/Block_Coding.png',
+    ENVIRONMENTAL_SCIENCE: '/FrienderResources/Environmental_Science.png',
+    DRONE: '/FrienderResources/Drone.png',
+    DRUG_PREVENTION: '/FrienderResources/Drug_Prevention.png',
+    WORLD_TRAVEL: '/FrienderResources/World_Travel.png',
+    BLOCK_CODING: '/FrienderResources/Block_Coding.png',
   },
   
   // 회사 가치 섹션
   COMPANY_VALUES: {
-    CREATIVITY: '/src/FrienderResources/Creativity.png',
-    INNOVATION: '/src/FrienderResources/Innovation.png',
-    COMMUNITY_COLLABORATION: '/src/FrienderResources/Community Collaboration.png',
-    EDUCATION: '/src/FrienderResources/Education.png',
-    SUSTAINABILITY: '/src/FrienderResources/Sustainability.png',
-    CENTER_IMAGE: '/src/FrienderResources/intro_friender.png',
+    CREATIVITY: '/FrienderResources/Creativity.png',
+    INNOVATION: '/FrienderResources/Innovation.png',
+    COMMUNITY_COLLABORATION: '/FrienderResources/Community Collaboration.png',
+    EDUCATION: '/FrienderResources/Education.png',
+    SUSTAINABILITY: '/FrienderResources/Sustainability.png',
+    CENTER_IMAGE: '/FrienderResources/intro_friender.png',
   },
   
   // 회사소개 섹션 이미지
   ABOUT: {
-    MAIN: '/src/FrienderResources/About-us_main.png',
-    ONE: '/src/FrienderResources/About-us_1.png',
-    TWO: '/src/FrienderResources/About-us_2.png',
-    THREE: '/src/FrienderResources/About-us_3.png',
-    HOME: '/src/FrienderResources/home.png',
-    FILE_DOWNLOAD: '/src/FrienderResources/file_download.png',
-    SCROLL: '/src/FrienderResources/scroll.png',
-    CAR: '/src/FrienderResources/Car.png',
-    BUS: '/src/FrienderResources/Bus.png',
-    TRAIN: '/src/FrienderResources/Train.png',
-    ABOUT_LOGO: '/src/FrienderResources/about_Logo.png',
+    MAIN: '/FrienderResources/About-us_main.png',
+    ONE: '/FrienderResources/About-us_1.png',
+    TWO: '/FrienderResources/About-us_2.png',
+    THREE: '/FrienderResources/About-us_3.png',
+    HOME: '/FrienderResources/home.png',
+    FILE_DOWNLOAD: '/FrienderResources/file_download.png',
+    SCROLL: '/FrienderResources/scroll.png',
+    CAR: '/FrienderResources/Car.png',
+    BUS: '/FrienderResources/Bus.png',
+    TRAIN: '/FrienderResources/Train.png',
+    ABOUT_LOGO: '/FrienderResources/about_Logo.png',
   },
 };
 
 // 폰트 경로
 export const FONTS = {
-  FONTS_DIR: '/src/FrienderResources/fonts/',
+  FONTS_DIR: '/FrienderResources/fonts/',
 }; 
