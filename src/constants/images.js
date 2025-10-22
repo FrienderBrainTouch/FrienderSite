@@ -53,6 +53,12 @@ export const IMAGES = {
     TRAIN: '/FrienderResources/Train.png',
     ABOUT_LOGO: '/FrienderResources/about_Logo.png',
   },
+  
+  // 화살표 이미지
+  ARROWS: {
+    LEFT: '/FrienderResources/arrow-left.png',
+    RIGHT: '/FrienderResources/arrow-right.png',
+  },
 };
 
 // 폰트 경로

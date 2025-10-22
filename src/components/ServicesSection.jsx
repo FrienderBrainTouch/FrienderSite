@@ -277,7 +277,7 @@ const ServicesSection = () => {
                   aria-label="이전 슬라이드"
                 >
                   <img
-                    src="/src/FrienderResources/arrow-left.png"
+                    src={IMAGES.ARROWS.LEFT}
                     alt="이전 슬라이드"
                     className="w-full h-full object-contain"
                   />
@@ -327,7 +327,7 @@ const ServicesSection = () => {
                   aria-label="다음 슬라이드"
                 >
                   <img
-                    src="/src/FrienderResources/arrow-right.png"
+                    src={IMAGES.ARROWS.RIGHT}
                     alt="다음 슬라이드"
                     className="w-full h-full object-contain"
                   />
